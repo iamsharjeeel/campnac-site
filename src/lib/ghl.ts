@@ -23,7 +23,7 @@ export interface GHLPayload {
   message?: string
   smsOptIn: boolean
   source: 'microsite-enroll'
-  campaign: 'summer-2025-urgency'
+  campaign: 'summer-2026-urgency'
 }
 
 export interface GHLResult {
@@ -51,7 +51,7 @@ export async function submitToGHL(payload: GHLPayload): Promise<GHLResult> {
       body: JSON.stringify({
         ...payload,
         source: 'microsite-enroll',
-        campaign: 'summer-2025-urgency',
+        campaign: 'summer-2026-urgency',
         submittedAt: new Date().toISOString(),
       }),
     })

@@ -210,13 +210,33 @@ export default function Navbar({ forceSolid = false }: NavbarProps) {
           >
             <motion.div
               animate={mobileOpen ? 'open' : 'closed'}
-              style={{ width: '24px', height: '24px', position: 'relative' }}
+              initial="closed"
+              style={{ width: '24px', height: '18px', position: 'relative' }}
             >
-              {/* Hamburger lines → X animation handled by Framer Motion */}
-              {/* Executor: implement 3-line → X animation here */}
-              <span style={{ display: 'block', width: '24px', height: '2px', background: 'white', borderRadius: '2px' }} />
-              <span style={{ display: 'block', width: '24px', height: '2px', background: 'white', borderRadius: '2px', marginTop: '5px' }} />
-              <span style={{ display: 'block', width: '24px', height: '2px', background: 'white', borderRadius: '2px', marginTop: '5px' }} />
+              <motion.span
+                variants={{
+                  closed: { rotate: 0, y: 0 },
+                  open: { rotate: 45, y: 8 },
+                }}
+                transition={{ duration: 0.25 }}
+                style={{ position: 'absolute', top: 0, left: 0, width: '24px', height: '2px', background: 'white', borderRadius: '2px' }}
+              />
+              <motion.span
+                variants={{
+                  closed: { opacity: 1 },
+                  open: { opacity: 0 },
+                }}
+                transition={{ duration: 0.15 }}
+                style={{ position: 'absolute', top: '8px', left: 0, width: '24px', height: '2px', background: 'white', borderRadius: '2px' }}
+              />
+              <motion.span
+                variants={{
+                  closed: { rotate: 0, y: 0 },
+                  open: { rotate: -45, y: -8 },
+                }}
+                transition={{ duration: 0.25 }}
+                style={{ position: 'absolute', top: '16px', left: 0, width: '24px', height: '2px', background: 'white', borderRadius: '2px' }}
+              />
             </motion.div>
           </button>
         </div>

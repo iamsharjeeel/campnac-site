@@ -11,8 +11,8 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        {/* Favicon — replace with actual Camp NAC favicon */}
-        <link rel="icon" href="/favicon.ico" />
+        {/* Favicon — replace with actual Camp NAC logo mark when client provides it */}
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         {/* Meta theme color */}
         <meta name="theme-color" content="#1B3A2D" />
       </Head>

@@ -146,6 +146,15 @@ a {
   background-color: rgba(255, 255, 255, 0.08);
 }
 
+/* ─── Navbar Solid State ────────────────────────────────────── */
+/* Added by initNavbarScroll() after 60px scroll, or via forceSolid prop */
+.nav-solid {
+  background-color: rgba(27, 58, 45, 0.96) !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
 /* ─── Badge ─────────────────────────────────────────────────── */
 .badge {
   display: inline-block;
@@ -156,6 +165,46 @@ a {
   text-transform: uppercase;
   padding: 4px 12px;
   border-radius: 100px;
+}
+
+/* ─── Form Fields ───────────────────────────────────────────── */
+.field-label {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-bark);
+  margin-bottom: 6px;
+}
+
+.input-base {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--color-bark);
+  background-color: var(--color-white);
+  border: 1px solid #D5E5DF;
+  border-radius: 8px;
+  padding: 12px 16px;
+  transition: border-color var(--transition-base), box-shadow var(--transition-base);
+}
+
+.input-base:focus {
+  outline: none;
+  border-color: var(--color-forest);
+  box-shadow: 0 0 0 3px rgba(27, 58, 45, 0.15);
+}
+
+.input-base.input-error {
+  border-color: #EF4444;
+}
+
+.field-error {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: #DC2626;
+  margin-top: 4px;
 }
 
 /* ─── Scrollbar ─────────────────────────────────────────────── */

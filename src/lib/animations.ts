@@ -57,24 +57,34 @@ export function animateHero(elements: {
   ctas: Element | null
   socialProof: Element | null
 }) {
-  if (shouldReduceMotion()) return
+  const all = [elements.badge, elements.headline, elements.subheadline, elements.ctas, elements.socialProof].filter(
+    (el): el is Element => el !== null
+  )
+
+  // Hero elements ship with inline opacity:0 to prevent a flash before this
+  // runs — so we must use fromTo (from would animate 0 → 0), and reduced-motion
+  // users need the opacity cleared explicitly or the hero stays invisible.
+  if (shouldReduceMotion()) {
+    gsap.set(all, { opacity: 1 })
+    return
+  }
 
   const tl = gsap.timeline({ defaults: { ease: 'power2.out' } })
 
   if (elements.badge) {
-    tl.from(elements.badge, { opacity: 0, y: 12, duration: 0.4 }, 0.2)
+    tl.fromTo(elements.badge, { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.4 }, 0.2)
   }
   if (elements.headline) {
-    tl.from(elements.headline, { opacity: 0, y: 28, duration: 0.6 }, 0.5)
+    tl.fromTo(elements.headline, { opacity: 0, y: 28 }, { opacity: 1, y: 0, duration: 0.6 }, 0.5)
   }
   if (elements.subheadline) {
-    tl.from(elements.subheadline, { opacity: 0, duration: 0.5 }, 0.9)
+    tl.fromTo(elements.subheadline, { opacity: 0 }, { opacity: 1, duration: 0.5 }, 0.9)
   }
   if (elements.ctas) {
-    tl.from(elements.ctas, { opacity: 0, y: 16, duration: 0.5 }, 1.1)
+    tl.fromTo(elements.ctas, { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.5 }, 1.1)
   }
   if (elements.socialProof) {
-    tl.from(elements.socialProof, { opacity: 0, duration: 0.4 }, 1.4)
+    tl.fromTo(elements.socialProof, { opacity: 0 }, { opacity: 1, duration: 0.4 }, 1.4)
   }
 
   return tl

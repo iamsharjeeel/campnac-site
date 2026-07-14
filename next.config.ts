@@ -8,7 +8,7 @@ const nextConfig: NextConfig = {
 
   // Image optimization — add campnac.com domain if pulling any images
   images: {
-    domains: ['campnac.com'],
+    remotePatterns: [{ protocol: 'https', hostname: 'campnac.com' }],
   },
 
   // Security headers

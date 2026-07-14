@@ -18,6 +18,7 @@
 import Head from 'next/head'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
+import UrgencyBanner from '@/components/home/UrgencyBanner'
 
 export default function TermsPage() {
   return (
@@ -27,15 +28,16 @@ export default function TermsPage() {
         <meta name="description" content="Camp NAC terms of service for the enrollment inquiry website." />
       </Head>
 
+      <UrgencyBanner />
       <Navbar forceSolid />
 
-      <main className="section-py" style={{ background: 'var(--color-white)' }}>
+      <main className="section-py" style={{ background: 'var(--color-white)', paddingTop: '156px' }}>
         <div style={{ maxWidth: '720px', margin: '0 auto', padding: '0 24px' }}>
           <h1 className="font-display" style={{ fontSize: '36px', color: 'var(--color-bark)', marginBottom: '8px' }}>
             Terms of Service
           </h1>
           <p style={{ color: 'var(--color-muted)', fontSize: '14px', marginBottom: '40px' }}>
-            Last updated: July 1, 2025
+            Last updated: July 14, 2026
           </p>
 
           <section style={{ marginBottom: '32px' }}>
@@ -109,6 +111,7 @@ export default function TermsPage() {
               <strong>Camp NAC</strong><br />
               132 Pleasant Run<br />
               Horsham, PA 19044<br />
+              Phone: 215-944-8860<br />
               Website: campnac.com
             </p>
           </section>

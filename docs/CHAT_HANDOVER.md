@@ -30,11 +30,17 @@ Deployed on Vercel
 
 | Route | File | Status |
 |-------|------|--------|
-| `/` | `src/pages/index.tsx` | ⬜ |
-| `/programs` | `src/pages/programs.tsx` | ⬜ |
-| `/enroll` | `src/pages/enroll.tsx` | ⬜ |
-| `/privacy` | `src/pages/privacy.tsx` | ⬜ |
-| `/terms` | `src/pages/terms.tsx` | ⬜ |
+| `/` | `src/pages/index.tsx` | ✅ |
+| `/programs` | `src/pages/programs.tsx` | ✅ |
+| `/enroll` | `src/pages/enroll.tsx` | ✅ |
+| `/privacy` | `src/pages/privacy.tsx` | ✅ |
+| `/terms` | `src/pages/terms.tsx` | ✅ |
+
+> **Season note (2026-07-14):** The site now targets **Summer 2026** (confirmed with
+> Sharjeel). Close date fallback is 2026-07-31 (override with
+> `NEXT_PUBLIC_ENROLLMENT_CLOSE_DATE`). Week dates below were shifted to the 2026
+> calendar using the same Mon–Fri pattern — confirm with client.
+> Footer phone (215-944-8860) and social handles were pulled from campnac.com.
 
 ---
 
@@ -146,18 +152,19 @@ Use this data to populate the Programs page. All 8 programs must appear with rea
 
 ---
 
-## Preferred Start Weeks (Summer 2025 — verify with client)
+## Preferred Start Weeks (Summer 2026 — verify with client)
 
-Use these in the form dropdown:
-- Week 1: June 23 – June 27
-- Week 2: June 30 – July 4 (note: July 4 holiday — may be closed)
-- Week 3: July 7 – July 11
-- Week 4: July 14 – July 18
-- Week 5: July 21 – July 25
-- Week 6: July 28 – August 1
-- Week 7: August 4 – August 8
-- Week 8: August 11 – August 15
-- Week 9: August 18 – August 22
+Use these in the form dropdown (defined in `src/lib/campData.ts` as `START_WEEKS`
+with `{label, start}` objects; the enroll form hides weeks that already ended):
+- Week 1: June 22 – June 26
+- Week 2: June 29 – July 3 (note: July 4 holiday observed Friday July 3 — may be closed)
+- Week 3: July 6 – July 10
+- Week 4: July 13 – July 17
+- Week 5: July 20 – July 24
+- Week 6: July 27 – July 31
+- Week 7: August 3 – August 7
+- Week 8: August 10 – August 14
+- Week 9: August 17 – August 21
 
 ---
 

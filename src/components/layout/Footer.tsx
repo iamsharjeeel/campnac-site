@@ -82,7 +82,7 @@ export default function Footer() {
             </p>
             <div style={{ display: 'flex', gap: '16px' }}>
               <a
-                href="https://facebook.com"
+                href="https://facebook.com/CampNAC"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{ fontSize: '13px', color: 'rgba(255,255,255,0.6)', textDecoration: 'none' }}
@@ -90,7 +90,7 @@ export default function Footer() {
                 Facebook
               </a>
               <a
-                href="https://instagram.com"
+                href="https://instagram.com/camp_nac"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{ fontSize: '13px', color: 'rgba(255,255,255,0.6)', textDecoration: 'none' }}
@@ -163,10 +163,10 @@ export default function Footer() {
                 📍 132 Pleasant Run, Horsham, PA 19044
               </span>
               <a
-                href="tel:+1XXXXXXXXXX"
+                href="tel:+12159448860"
                 style={{ fontSize: '14px', color: 'rgba(255,255,255,0.7)', textDecoration: 'none' }}
               >
-                📞 [Update phone with client]
+                📞 215-944-8860
               </a>
               <a
                 href="https://campnac.com"
@@ -194,7 +194,7 @@ export default function Footer() {
           }}
         >
           <span style={{ fontSize: '13px', color: 'rgba(255,255,255,0.5)' }}>
-            © 2025 Camp NAC. All rights reserved.
+            © {new Date().getFullYear()} Camp NAC. All rights reserved.
           </span>
           <div style={{ display: 'flex', gap: '20px' }}>
             <Link

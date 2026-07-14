@@ -21,9 +21,9 @@
  * Register GSAP plugins in _app.tsx, not here.
  *
  * SEO:
- * - Title: "Summer Camp 2025 — Camp NAC | Horsham, PA"
+ * - Title: "Summer Camp 2026 — Camp NAC | Horsham, PA"
  * - Description: "Custom-build your child's summer at Camp NAC — Bucks County's most-loved summer camp for kids ages 3–15. 75+ themed programs, flexible scheduling. Enroll now."
- * - OG image: Forest green card with Camp NAC logo + "Summer 2025 Enrollment Open"
+ * - OG image: Forest green card with Camp NAC logo + "Summer 2026 Enrollment Open"
  *
  * ─── SAMPLE IMPLEMENTATION ──────────────────────────────────────────────────
  */
@@ -42,12 +42,12 @@ export default function HomePage() {
   return (
     <>
       <Head>
-        <title>Summer Camp 2025 — Camp NAC | Horsham, PA</title>
+        <title>Summer Camp 2026 — Camp NAC | Horsham, PA</title>
         <meta
           name="description"
           content="Custom-build your child's summer at Camp NAC — Bucks County's most-loved summer camp for kids ages 3–15. 75+ themed programs, flexible scheduling. Enroll now."
         />
-        <meta property="og:title" content="Summer Camp 2025 — Camp NAC" />
+        <meta property="og:title" content="Summer Camp 2026 — Camp NAC" />
         <meta
           property="og:description"
           content="75+ themed camps. Build the summer your kid actually wants. Bucks County, PA."
@@ -80,7 +80,7 @@ export default function HomePage() {
  *
  * UrgencyBanner:
  *   - Sticky top bar, Sun (#F5A623) background, Bark text
- *   - "⚡ Limited spots for Summer 2025 — [X] days left"
+ *   - "⚡ Limited spots for Summer 2026 — [X] days left"
  *   - Countdown uses process.env.NEXT_PUBLIC_ENROLLMENT_CLOSE_DATE
  *   - JetBrains Mono for the number
  *   - Height: 44px, z-index: 50
@@ -159,7 +159,7 @@ export default function HomePage() {
  * FinalCTA:
  *   - Forest (#1B3A2D) background
  *   - H2 (Fraunces, White, 40px): "Spots Are Filling Fast."
- *   - Body (Inter, White/70%, 18px): "Summer 2025 enrollment closes soon.
+ *   - Body (Inter, White/70%, 18px): "Summer 2026 enrollment closes soon.
  *     Secure your child's spot before it's gone."
  *   - CTA: "Enroll My Child Now →" (Sun bg, Bark text, large: 18px, py-4 px-8)
  *   - Below CTA: "No commitment until you review the full enrollment packet." (White/50%, 13px)

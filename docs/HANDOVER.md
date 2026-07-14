@@ -4,8 +4,8 @@
 **Lead Dev:** Sharjeel  
 **Client:** Camp NAC  
 **Last Updated:** 2026-07-14  
-**Current Version:** 0.1.0  
-**Last Deploy:** Not yet deployed  
+**Current Version:** 0.2.0  
+**Last Deploy:** 2026-07-14 (Vercel)  
 **Live URL:** TBD (target: enroll.campnac.com)
 
 ---
@@ -14,17 +14,17 @@
 
 | Item | Status | Notes |
 |------|--------|-------|
-| Repo initialized | ⬜ | — |
+| Repo initialized | ✅ | Next.js 15 Pages Router, pnpm |
 | Design system docs | ✅ | DESIGN_SYSTEM.md complete |
 | Vision docs | ✅ | VISION.md complete |
 | GHL pipeline spec | ✅ | GHL_PIPELINE.md complete |
-| Home page built | ⬜ | — |
-| Programs page built | ⬜ | — |
-| Enroll page + form | ⬜ | — |
-| Privacy & Terms pages | ⬜ | Needed for A2P |
-| GHL webhook connected | ⬜ | Need webhook URL from client |
-| Vercel deployment | ⬜ | — |
-| A2P submission | ⬜ | — |
+| Home page built | ✅ | Hero (canvas particles), HowItWorks, CampGrid, SocialProof, FinalCTA |
+| Programs page built | ✅ | All 8 programs, intro, flexibility callout, inline CTA |
+| Enroll page + form | ✅ | Full form + validation, chips multi-select, success/error states |
+| Privacy & Terms pages | ✅ | Real content, phone + address, SMS opt-out language |
+| GHL webhook connected | ⬜ | Need webhook URL from client → set NEXT_PUBLIC_GHL_WEBHOOK_URL in Vercel |
+| Vercel deployment | ✅ | Deployed 2026-07-14; add env vars + custom domain |
+| A2P submission | ⬜ | Site content ready; submit after webhook + domain live |
 | Client review | ⬜ | — |
 
 ---
@@ -61,14 +61,15 @@ NEXT_PUBLIC_ENROLLMENT_CLOSE_DATE=2025-07-31  ← for countdown timer
 
 ## Known Gaps / To Confirm with Client
 
-- [ ] Confirm enrollment close date (currently assuming July 31, 2025)
-- [ ] Get GHL webhook URL after subaccount setup
-- [ ] Get actual phone number for footer
-- [ ] Confirm social media handles (Facebook, Instagram)
-- [ ] Get high-res logo file (SVG preferred)
+- [ ] Confirm enrollment close date (currently assuming July 31, **2026** — site retargeted to Summer 2026 on 2026-07-14)
+- [ ] Confirm Summer 2026 week dates (currently Mon–Fri weeks starting June 22, 2026 — derived from the 2025 schedule pattern, NOT client-confirmed)
+- [ ] Get GHL webhook URL after subaccount setup → set `NEXT_PUBLIC_GHL_WEBHOOK_URL` in Vercel env
+- [x] Phone number: 215-944-8860 (pulled from campnac.com per VISION.md — verify with client)
+- [x] Social handles: facebook.com/CampNAC, instagram.com/camp_nac (pulled from campnac.com)
+- [ ] Get high-res logo file (SVG preferred) — placeholder text logo + SVG favicon in use
 - [ ] Get 2–3 real parent testimonials (or permission to use approximate quotes)
-- [ ] Confirm preferred start week dates for Summer 2025 (for form dropdown)
 - [ ] Confirm subdomain: enroll.campnac.com or separate domain?
+- [ ] GHL side: pipeline/tags in GHL_PIPELINE.md still say `summer-2025` — form now sends `campaign: summer-2026-urgency`; align GHL automations when building the pipeline
 
 ---
 
@@ -96,6 +97,15 @@ Format:
 ---
 
 ## Session Log
+
+### 2026-07-14 — Full site build-out, Summer 2026 retarget, Vercel deploy
+- Built: `HowItWorks`, `CampGrid`, `SocialProof`, `FinalCTA` home components (were missing — home page did not compile); full Programs page (hero, intro, flexibility callout, inline CTA); full Enroll page (react-hook-form with validation, camp-interest chips, start-week dropdown that hides past weeks, animated success card, inline error state); navbar hamburger→X animation; SVG favicon
+- Fixed: `footer.tsx` → `Footer.tsx` case mismatch (broke Vercel/Linux builds); missing `postcss.config.mjs` (Tailwind classes were silently dead); hero GSAP bug (`from` on elements with inline `opacity:0` animated 0→0, hero was invisible; also now clears opacity for reduced-motion users); `.nav-solid` class was referenced but never defined in CSS (navbar was transparent on light pages); privacy/terms pages missing top padding + UrgencyBanner; deprecated `images.domains` config
+- Changed: season retargeted **Summer 2025 → Summer 2026** (confirmed with Sharjeel) — all copy, close date fallback (2026-07-31), START_WEEKS now structured `{label, start}` with 2026 dates, GHL campaign tag `summer-2026-urgency`; footer/privacy/terms now use real phone 215-944-8860 and social URLs pulled from campnac.com
+- Version: 0.2.0
+- Deployed: yes — Vercel (project created from this session); env vars still needed: `NEXT_PUBLIC_GHL_WEBHOOK_URL`, `NEXT_PUBLIC_SITE_URL`, `NEXT_PUBLIC_ENROLLMENT_CLOSE_DATE`
+- Verified: `pnpm build` green; Playwright pass on all pages at 1280px + 375px — no console errors; form validation, error path (no webhook), and week filtering all exercised in-browser
+- Next task: client to provide GHL webhook URL + confirm 2026 dates → then A2P submission
 
 ### 2026-07-14 — Repo cleanup: remove placeholder test files
 - Built: nothing (cleanup only)
