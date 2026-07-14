@@ -1,0 +1,62 @@
+Vision — Camp NAC Enrollment Site
+The One Job
+Get parents of kids ages 3–15 in Bucks County, PA (and surrounding areas) to submit an enrollment inquiry within the next 2–3 weeks before summer 2025 enrollment closes.
+Everything on this site — every headline, every section, every animation — serves that single conversion goal.
+---
+Client Context
+Camp NAC is an established summer camp in Horsham, Pennsylvania. Voted Best Summer Camp in Bucks County. They offer:
+13-week flexible summer schedule (attend as few or as many weeks as you like)
+75+ themed camp programs for kids ages 3–15
+Activities spanning arts, STEM, cooking, sports, NACventures (outdoor adventure), teen programs, and Early Learners (ages 3–5)
+A "custom build your summer" model — no minimum weeks, flexible scheduling, multi-week discounts
+Schools Out Camp (SOC) and Village Farm Camp as specialty offerings
+A strong community reputation — real families, real testimonials
+The agency: Xovera (xovera.io) — building this site as part of a GHL CRM setup for Camp NAC. This microsite will capture leads that flow into a GHL subaccount pipeline.
+---
+Audience
+Primary: Parents of children ages 3–15, Bucks County PA and surrounding suburbs
+Secondary: Grandparents or guardians making enrollment decisions
+What they care about:
+Safety and trust (established, reputable camp)
+Flexibility (doesn't lock them into a full summer)
+Variety (something for every kid's interest)
+Value (multi-week discounts, quality programming)
+Urgency is real — spots fill up and they know it
+What they DON'T want:
+Generic camp language that sounds like every other camp
+Long confusing forms
+Uncertainty about what happens after they submit
+---
+Tone & Voice
+Warm but confident — this is an established camp that earns trust
+Direct — parents are busy; get to the point fast
+Slightly playful — it's a camp, there should be energy and joy
+Never corporate, never salesy, never hollow ("Your child's adventure awaits!" = trash)
+Good headline example: "75 camps. Build the summer your kid actually wants."  
+Bad headline example: "Unlock a World of Adventure at Camp NAC!"
+---
+Design Direction
+The site should feel modern, editorial, and distinctly NOT like a typical camp site (which tends toward cheesy stock photos, rainbow colors, and Comic Sans energy).
+Reference aesthetic: premium youth brand — think Patagonia kids meets a well-funded STEM academy. Clean, confident, with moments of warmth.
+Full design spec is in `DESIGN_SYSTEM.md`.
+---
+A2P Compliance Notes
+This site must pass manual A2P (Application-to-Person SMS) review. Reviewers look for:
+Real business identity (name, address, phone, email in footer)
+Genuine content depth (not a thin one-pager)
+Clear opt-in language on the form
+Privacy policy link
+Terms of service link
+Originality — must not look like a template or placeholder
+Camp NAC's real details:
+Address: 132 Pleasant Run, Horsham, PA 19044
+Phone: (listed on campnac.com — pull from site or confirm with client)
+Website: campnac.com
+Social: Facebook, Instagram (confirm handles with client)
+The Programs page is critical for A2P depth — it must read as a real business with real offerings.
+---
+Success Metrics
+Form submission rate (primary)
+Time on site (secondary)
+Scroll depth on Programs page (A2P secondary)
+GHL pipeline entries tagged "Summer Camp Inquiry – Microsite"
