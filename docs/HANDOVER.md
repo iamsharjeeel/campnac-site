@@ -3,7 +3,7 @@
 **Agency:** Xovera (xovera.io)  
 **Lead Dev:** Sharjeel  
 **Client:** Camp NAC  
-**Last Updated:** [UPDATE ON EVERY SESSION]  
+**Last Updated:** 2026-07-14  
 **Current Version:** 0.1.0  
 **Last Deploy:** Not yet deployed  
 **Live URL:** TBD (target: enroll.campnac.com)
@@ -97,4 +97,9 @@ Format:
 
 ## Session Log
 
-*(No sessions yet — populate as work begins)*
+### 2026-07-14 — Repo cleanup: remove placeholder test files
+- Built: nothing (cleanup only)
+- Changed: deleted `src/lib/test`, `src/pages/test`, `src/styles/test` — plain-text placeholders originally committed to create empty folders on GitHub; all three folders now contain real source files so the placeholders are no longer needed
+- Version: 0.1.0 (no code change)
+- Deployed: no
+- Next task: first ⬜ item in the status table (Home page built), pending confirmation with Sharjeel
