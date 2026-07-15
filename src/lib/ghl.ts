@@ -21,6 +21,10 @@ export interface GHLPayload {
   preferredStartWeek: string
   heardAboutUs: string
   message?: string
+  smsMarketingConsent: boolean
+  smsTransactionalConsent: boolean
+  // Derived: true when either consent above is given — kept for GHL
+  // automations that key off a single sms-opted-in flag.
   smsOptIn: boolean
   source: 'microsite-enroll'
   campaign: 'summer-2026-urgency'

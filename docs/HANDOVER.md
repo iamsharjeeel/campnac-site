@@ -4,7 +4,7 @@
 **Lead Dev:** Sharjeel  
 **Client:** Camp NAC  
 **Last Updated:** 2026-07-14  
-**Current Version:** 0.2.0  
+**Current Version:** 0.3.0  
 **Last Deploy:** 2026-07-14 (Vercel)  
 **Live URL:** TBD (target: enroll.campnac.com)
 
@@ -97,6 +97,14 @@ Format:
 ---
 
 ## Session Log
+
+### 2026-07-14 — Legal pages overhaul + SMS consent compliance (v0.3.0)
+- Built: `/sms-terms` page — Camp NAC Messaging Program terms (carrier-mandated disclosures, opt-out/HELP boxes, frequency, data rates, TCPA/FCC/CTIA/10DLC compliance, PA governing law)
+- Changed: `/privacy` and `/terms` fully replaced with the operator's master content per Sharjeel (Operating Entity: **Newtown Racquetball INC DBA Camp NAC**; Effective April 8, 2026; support info@newtownathletic.com / (215) 968-0600; 120 Pheasant Run, Newtown, PA 18940) including carrier-mandated SMS data disclosures and the SMS opt-in sharing carve-out
+- Form: phone field now optional (no visual change other than dropped asterisk; 10-digit format still validated when provided); pre-checked single SMS opt-in replaced with **two optional, unchecked consents** (Marketing Updates + Transactional Updates, exact carrier-compliant language); legal line under the form and the global footer now link Privacy, Terms, **and SMS Terms**
+- GHL payload: added `smsMarketingConsent` and `smsTransactionalConsent` booleans; `smsOptIn` kept as a derived flag (true if either consent given) for existing automations
+- Version: 0.3.0 — Deployed: yes (Vercel)
+- ⚠️ To confirm with client: legal pages use the operator's Newtown contact details while the site footer still shows Camp NAC's Horsham details (132 Pleasant Run / 215-944-8860) — align once client confirms which set is correct; also confirm DBA spelling ("Camp NAC" used, per site branding)
 
 ### 2026-07-14 — Full site build-out, Summer 2026 retarget, Vercel deploy
 - Built: `HowItWorks`, `CampGrid`, `SocialProof`, `FinalCTA` home components (were missing — home page did not compile); full Programs page (hero, intro, flexibility callout, inline CTA); full Enroll page (react-hook-form with validation, camp-interest chips, start-week dropdown that hides past weeks, animated success card, inline error state); navbar hamburger→X animation; SVG favicon

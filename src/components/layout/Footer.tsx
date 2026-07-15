@@ -209,6 +209,12 @@ export default function Footer() {
             >
               Terms of Service
             </Link>
+            <Link
+              href="/sms-terms"
+              style={{ fontSize: '13px', color: 'rgba(255,255,255,0.5)', textDecoration: 'none' }}
+            >
+              SMS Terms
+            </Link>
           </div>
         </div>
       </div>

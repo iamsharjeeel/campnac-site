@@ -31,8 +31,22 @@ interface FormData {
   preferredStartWeek: string
   heardAboutUs: string
   message?: string
-  smsOptIn: boolean
+  smsMarketingConsent: boolean
+  smsTransactionalConsent: boolean
 }
+
+const SMS_CONSENTS = [
+  {
+    field: 'smsMarketingConsent' as const,
+    label: 'Marketing Updates:',
+    text: 'I consent to receive recurring automated promotional and personalized marketing text messages (e.g. SMS/MMS) from Newtown Racquetball INC DBA Camp NAC at the number provided. Message and data rates may apply. Message frequency varies. Reply STOP to cancel at any time. My consent is not a condition of any purchase.',
+  },
+  {
+    field: 'smsTransactionalConsent' as const,
+    label: 'Transactional Updates:',
+    text: 'I consent to receive non-marketing text messages related to my account, membership updates, and facility alerts from Newtown Racquetball INC DBA Camp NAC. Message and data rates may apply. Message frequency varies. Reply STOP to cancel at any time. My consent is not a condition of any purchase.',
+  },
+]
 
 const CHILD_AGES = Array.from({ length: 13 }, (_, i) => i + 3) // 3–15
 
@@ -181,7 +195,8 @@ export default function EnrollPage() {
     formState: { errors },
   } = useForm<FormData>({
     defaultValues: {
-      smsOptIn: true,
+      smsMarketingConsent: false,
+      smsTransactionalConsent: false,
       campInterest: [],
     },
   })
@@ -212,7 +227,9 @@ export default function EnrollPage() {
       preferredStartWeek: data.preferredStartWeek,
       heardAboutUs: data.heardAboutUs,
       message: data.message?.trim() || undefined,
-      smsOptIn: data.smsOptIn,
+      smsMarketingConsent: data.smsMarketingConsent,
+      smsTransactionalConsent: data.smsTransactionalConsent,
+      smsOptIn: data.smsMarketingConsent || data.smsTransactionalConsent,
       source: 'microsite-enroll',
       campaign: 'summer-2026-urgency',
     }
@@ -390,7 +407,7 @@ export default function EnrollPage() {
                             {errors.email && <span className="field-error">{errors.email.message}</span>}
                           </div>
                           <div>
-                            <label htmlFor="phone" className="field-label">Phone *</label>
+                            <label htmlFor="phone" className="field-label">Phone</label>
                             <input
                               id="phone"
                               type="tel"
@@ -398,9 +415,8 @@ export default function EnrollPage() {
                               placeholder="(215) 555-0100"
                               className={`input-base ${errors.phone ? 'input-error' : ''}`}
                               {...register('phone', {
-                                required: 'Phone number is required',
                                 validate: (value) =>
-                                  value.replace(/\D/g, '').length >= 10 || 'Enter a valid 10-digit phone number',
+                                  !value || value.replace(/\D/g, '').length >= 10 || 'Enter a valid 10-digit phone number',
                               })}
                             />
                             {errors.phone && <span className="field-error">{errors.phone.message}</span>}
@@ -522,32 +538,41 @@ export default function EnrollPage() {
                           {errors.message && <span className="field-error">{errors.message.message}</span>}
                         </div>
 
-                        {/* SMS opt-in */}
-                        <label
-                          style={{
-                            display: 'flex',
-                            gap: '10px',
-                            alignItems: 'flex-start',
-                            cursor: 'pointer',
-                            marginBottom: '12px',
-                          }}
-                        >
-                          <input
-                            type="checkbox"
-                            style={{ marginTop: '3px', width: '16px', height: '16px', accentColor: 'var(--color-forest)', flexShrink: 0 }}
-                            {...register('smsOptIn')}
-                          />
-                          <span style={{ fontSize: '12px', color: 'var(--color-muted)', lineHeight: 1.5 }}>
-                            I agree to receive enrollment updates and information from Camp NAC via
-                            SMS and email. Message and data rates may apply. Reply STOP to unsubscribe.
-                          </span>
-                        </label>
+                        {/* SMS consents — both optional, unchecked by default */}
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '16px' }}>
+                          {SMS_CONSENTS.map((consent) => (
+                            <label
+                              key={consent.field}
+                              style={{
+                                display: 'flex',
+                                gap: '10px',
+                                alignItems: 'flex-start',
+                                cursor: 'pointer',
+                                background: 'var(--color-white)',
+                                border: '1px solid #D5E5DF',
+                                borderRadius: '12px',
+                                padding: '14px 16px',
+                              }}
+                            >
+                              <input
+                                type="checkbox"
+                                style={{ marginTop: '2px', width: '16px', height: '16px', accentColor: 'var(--color-forest)', flexShrink: 0 }}
+                                {...register(consent.field)}
+                              />
+                              <span style={{ fontSize: '12px', color: 'var(--color-muted)', lineHeight: 1.55 }}>
+                                <strong style={{ color: 'var(--color-bark)' }}>{consent.label}</strong>{' '}
+                                {consent.text}
+                              </span>
+                            </label>
+                          ))}
+                        </div>
 
-                        {/* Privacy + terms */}
+                        {/* Privacy + terms + SMS terms */}
                         <p style={{ fontSize: '11px', color: 'var(--color-muted)', lineHeight: 1.5, marginBottom: '20px' }}>
                           By submitting this form you agree to our{' '}
-                          <Link href="/privacy" style={{ textDecoration: 'underline' }}>Privacy Policy</Link> and{' '}
-                          <Link href="/terms" style={{ textDecoration: 'underline' }}>Terms of Service</Link>.
+                          <Link href="/privacy" style={{ textDecoration: 'underline' }}>Privacy Policy</Link>,{' '}
+                          <Link href="/terms" style={{ textDecoration: 'underline' }}>Terms of Service</Link>, and{' '}
+                          <Link href="/sms-terms" style={{ textDecoration: 'underline' }}>SMS Terms &amp; Conditions</Link>.
                         </p>
 
                         {/* Submit */}
