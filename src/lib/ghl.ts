@@ -14,17 +14,20 @@ export interface GHLPayload {
   firstName: string
   lastName: string
   email: string
-  phone?: string
+  phone: string
   childName: string
   childAge: number
   campInterest: string[]
   preferredStartWeek: string
   heardAboutUs: string
   message?: string
-  marketingSmsConsent: boolean
-  transactionalSmsConsent: boolean
+  smsMarketingConsent: boolean
+  smsTransactionalConsent: boolean
+  // Derived: true when either consent above is given — kept for GHL
+  // automations that key off a single sms-opted-in flag.
+  smsOptIn: boolean
   source: 'microsite-enroll'
-  campaign: 'summer-2025-urgency'
+  campaign: 'summer-2026-urgency'
 }
 
 export interface GHLResult {
@@ -52,7 +55,7 @@ export async function submitToGHL(payload: GHLPayload): Promise<GHLResult> {
       body: JSON.stringify({
         ...payload,
         source: 'microsite-enroll',
-        campaign: 'summer-2025-urgency',
+        campaign: 'summer-2026-urgency',
         submittedAt: new Date().toISOString(),
       }),
     })

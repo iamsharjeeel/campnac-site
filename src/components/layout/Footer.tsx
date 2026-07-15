@@ -163,10 +163,10 @@ export default function Footer() {
                 📍 132 Pleasant Run, Horsham, PA 19044
               </span>
               <a
-                href="tel:+1XXXXXXXXXX"
+                href="tel:+12159680600"
                 style={{ fontSize: '14px', color: 'rgba(255,255,255,0.7)', textDecoration: 'none' }}
               >
-                📞 [Update phone with client]
+                📞 (215) 968-0600
               </a>
               <a
                 href="https://campnac.com"

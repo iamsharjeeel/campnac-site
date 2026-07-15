@@ -100,6 +100,13 @@ Format:
 
 ## Session Log
 
+### 2026-07-15 — Fix hero, enroll form, footer phone
+- Built: Restored full enroll form fields + trust panel; hero GSAP fromTo fix; footer phone (215) 968-0600
+- Changed: `enroll.tsx`, `animations.ts`, `Footer.tsx`, `globals.css`, `campData.ts`, `ghl.ts`, `UrgencyBanner.tsx`
+- Version: 0.2.1
+- Deployed: pending Vercel
+- Next task: Client review of live preview
+
 ### 2026-07-15 — Legal pages + form SMS consents
 - Built: Full Privacy, Terms, SMS Terms pages from NAC source (operator: Newtown Racquetball INC DBA CampNac); form marketing/transactional SMS consents; form + site footer legal links
 - Changed: `privacy.tsx`, `terms.tsx`, `sms-terms.tsx` (new), `enroll.tsx`, `ghl.ts`, `Footer.tsx`, docs
