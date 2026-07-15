@@ -24,6 +24,9 @@ Once enrollment season drops off (post-July), this transitions to a holding/wait
 | Home | `/` | Hero + urgency + social proof + CTA |
 | Camp Programs | `/programs` | All camp types with detail — satisfies A2P content depth |
 | Enroll | `/enroll` | Lead capture form → GHL webhook |
+| Privacy Policy | `/privacy` | A2P legal — Newtown Racquetball INC DBA CampNac |
+| Terms of Service | `/terms` | A2P legal |
+| SMS Terms | `/sms-terms` | SMS messaging terms & conditions |
 
 ---
 
@@ -70,7 +73,10 @@ camp-nac-site/
 │   ├── pages/
 │   │   ├── index.tsx           # Home
 │   │   ├── programs.tsx        # Programs
-│   │   └── enroll.tsx          # Enroll form
+│   │   ├── enroll.tsx          # Enroll form
+│   │   ├── privacy.tsx         # Privacy Policy
+│   │   ├── terms.tsx           # Terms of Service
+│   │   └── sms-terms.tsx       # SMS Messaging Terms
 │   ├── components/
 │   │   ├── layout/
 │   │   │   ├── Navbar.tsx
@@ -123,5 +129,6 @@ camp-nac-site/
 - [ ] Home page built
 - [ ] Programs page built
 - [ ] Enroll page + GHL form built
+- [x] Privacy / Terms / SMS Terms pages (Newtown Racquetball INC DBA CampNac)
 - [ ] A2P submission ready
 - [ ] Live on Vercel

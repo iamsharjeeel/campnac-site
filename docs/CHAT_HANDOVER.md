@@ -33,8 +33,9 @@ Deployed on Vercel
 | `/` | `src/pages/index.tsx` | ⬜ |
 | `/programs` | `src/pages/programs.tsx` | ⬜ |
 | `/enroll` | `src/pages/enroll.tsx` | ⬜ |
-| `/privacy` | `src/pages/privacy.tsx` | ⬜ |
-| `/terms` | `src/pages/terms.tsx` | ⬜ |
+| `/privacy` | `src/pages/privacy.tsx` | ✅ |
+| `/terms` | `src/pages/terms.tsx` | ✅ |
+| `/sms-terms` | `src/pages/sms-terms.tsx` | ✅ |
 
 ---
 
@@ -158,6 +159,15 @@ Use these in the form dropdown:
 - Week 7: August 4 – August 8
 - Week 8: August 11 – August 15
 - Week 9: August 18 – August 22
+
+---
+
+## Legal / A2P Notes (2026-07-15)
+
+- Operator on all legal pages: **Newtown Racquetball INC DBA CampNac**
+- Source content adapted from web.newtownathletic.com privacy / terms / sms-terms
+- Enroll form: phone is **not required** (no “optional” label). Two non-required SMS consents: Marketing Updates + Transactional Updates. Form footer links: Privacy, Terms, SMS Terms.
+- GHL payload fields: `marketingSmsConsent`, `transactionalSmsConsent` (replaced single `smsOptIn`)
 
 ---
 

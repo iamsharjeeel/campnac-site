@@ -64,14 +64,11 @@
  *     ROW 5 (2 cols): Preferred Start Week (dropdown) | How Did You Hear About Us? (dropdown)
  *     ROW 6 (full): Message / Questions (textarea, 4 rows, optional)
  *
- *   - SMS Opt-in checkbox (pre-checked):
- *     "I agree to receive enrollment updates and information from Camp NAC via SMS and email.
- *      Message and data rates may apply. Reply STOP to unsubscribe."
- *     Font: Inter 12px, Muted
+ *   - Two non-required SMS consent checkboxes (unchecked by default):
+ *     Marketing Updates + Transactional Updates (Newtown Racquetball INC DBA CampNac)
  *
- *   - Privacy + Terms line (Inter 11px, Muted):
- *     "By submitting this form you agree to our [Privacy Policy] and [Terms of Service]."
- *     Links → /privacy and /terms
+ *   - Form footer (Inter 11px, Muted):
+ *     Privacy Policy → /privacy | Terms of Service → /terms | SMS Terms → /sms-terms
  *
  *   - Submit button:
  *     Full-width, Sun bg, Bark text, Inter 600 16px, py-4
@@ -107,13 +104,14 @@
  * Field validation rules:
  *   - firstName, lastName: required, min 2 chars
  *   - email: required, valid email format
- *   - phone: required, min 10 digits (strip formatting)
+ *   - phone: not required
  *   - childName: required
  *   - childAge: required, must be 3–15
  *   - campInterest: optional (but encourage)
  *   - preferredStartWeek: required
  *   - heardAboutUs: required
  *   - message: optional, max 500 chars
+ *   - marketingSmsConsent, transactionalSmsConsent: not required
  *
  * Styling:
  *   - Input base class: Inter 15px, Bark color, Chalk bg, 1px border (Sky color),
@@ -124,6 +122,7 @@
  */
 
 import Head from 'next/head'
+import Link from 'next/link'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import Navbar from '@/components/layout/Navbar'
@@ -132,18 +131,21 @@ import UrgencyBanner from '@/components/home/UrgencyBanner'
 import { submitToGHL, type GHLPayload } from '@/lib/ghl'
 import { CAMP_PROGRAMS, START_WEEKS, HEARD_ABOUT_OPTIONS } from '@/lib/campData'
 
+const OPERATOR = 'Newtown Racquetball INC DBA CampNac'
+
 interface FormData {
   firstName: string
   lastName: string
   email: string
-  phone: string
+  phone?: string
   childName: string
   childAge: string
   campInterest: string[]
   preferredStartWeek: string
   heardAboutUs: string
   message?: string
-  smsOptIn: boolean
+  marketingSmsConsent: boolean
+  transactionalSmsConsent: boolean
 }
 
 export default function EnrollPage() {
@@ -161,7 +163,8 @@ export default function EnrollPage() {
     formState: { errors },
   } = useForm<FormData>({
     defaultValues: {
-      smsOptIn: true,
+      marketingSmsConsent: false,
+      transactionalSmsConsent: false,
       campInterest: [],
     },
   })
@@ -185,14 +188,15 @@ export default function EnrollPage() {
       firstName: data.firstName,
       lastName: data.lastName,
       email: data.email,
-      phone: data.phone,
+      phone: data.phone || '',
       childName: data.childName,
       childAge: parseInt(data.childAge, 10),
       campInterest: data.campInterest,
       preferredStartWeek: data.preferredStartWeek,
       heardAboutUs: data.heardAboutUs,
       message: data.message,
-      smsOptIn: data.smsOptIn,
+      marketingSmsConsent: data.marketingSmsConsent,
+      transactionalSmsConsent: data.transactionalSmsConsent,
       source: 'microsite-enroll',
       campaign: 'summer-2025-urgency',
     }
@@ -259,6 +263,77 @@ export default function EnrollPage() {
                         {error}
                       </div>
                     )}
+
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '16px' }}>
+                      <label
+                        style={{
+                          display: 'flex',
+                          gap: '12px',
+                          alignItems: 'flex-start',
+                          background: '#F0F0F0',
+                          borderRadius: '8px',
+                          padding: '14px 16px',
+                          cursor: 'pointer',
+                        }}
+                      >
+                        <input
+                          type="checkbox"
+                          {...register('marketingSmsConsent')}
+                          style={{ marginTop: '3px', flexShrink: 0 }}
+                        />
+                        <span style={{ fontFamily: 'var(--font-inter)', fontSize: '12px', color: 'var(--color-muted)', lineHeight: 1.55 }}>
+                          <strong style={{ color: 'var(--color-bark)' }}>Marketing Updates:</strong>{' '}
+                          I consent to receive recurring automated promotional and personalized marketing text messages (e.g. SMS/MMS) from {OPERATOR} at the number provided. Message and data rates may apply. Message frequency varies. Reply STOP to cancel at any time. My consent is not a condition of any purchase.
+                        </span>
+                      </label>
+
+                      <label
+                        style={{
+                          display: 'flex',
+                          gap: '12px',
+                          alignItems: 'flex-start',
+                          background: '#F0F0F0',
+                          borderRadius: '8px',
+                          padding: '14px 16px',
+                          cursor: 'pointer',
+                        }}
+                      >
+                        <input
+                          type="checkbox"
+                          {...register('transactionalSmsConsent')}
+                          style={{ marginTop: '3px', flexShrink: 0 }}
+                        />
+                        <span style={{ fontFamily: 'var(--font-inter)', fontSize: '12px', color: 'var(--color-muted)', lineHeight: 1.55 }}>
+                          <strong style={{ color: 'var(--color-bark)' }}>Transactional Updates:</strong>{' '}
+                          I consent to receive non-marketing text messages related to my account, membership updates, and facility alerts from {OPERATOR}. Message and data rates may apply. Message frequency varies. Reply STOP to cancel at any time. My consent is not a condition of any purchase.
+                        </span>
+                      </label>
+                    </div>
+
+                    <p
+                      style={{
+                        fontFamily: 'var(--font-inter)',
+                        fontSize: '11px',
+                        color: 'var(--color-muted)',
+                        marginBottom: '16px',
+                        lineHeight: 1.5,
+                      }}
+                    >
+                      By submitting this form you agree to our{' '}
+                      <Link href="/privacy" style={{ color: 'var(--color-forest)', textDecoration: 'underline' }}>
+                        Privacy Policy
+                      </Link>
+                      ,{' '}
+                      <Link href="/terms" style={{ color: 'var(--color-forest)', textDecoration: 'underline' }}>
+                        Terms of Service
+                      </Link>
+                      , and{' '}
+                      <Link href="/sms-terms" style={{ color: 'var(--color-forest)', textDecoration: 'underline' }}>
+                        SMS Terms
+                      </Link>
+                      .
+                    </p>
+
                     <button
                       type="submit"
                       className="btn-primary w-full justify-center"

@@ -109,7 +109,8 @@ The enroll form should POST this JSON to the GHL webhook:
   "preferredStartWeek": "June 23, 2025",
   "heardAboutUs": "Facebook Ad",
   "message": "Alex loves science and outdoor activities.",
-  "smsOptIn": true,
+  "marketingSmsConsent": true,
+  "transactionalSmsConsent": false,
   "source": "microsite-enroll",
   "campaign": "summer-2025-urgency"
 }

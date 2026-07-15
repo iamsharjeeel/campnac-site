@@ -14,14 +14,15 @@ export interface GHLPayload {
   firstName: string
   lastName: string
   email: string
-  phone: string
+  phone?: string
   childName: string
   childAge: number
   campInterest: string[]
   preferredStartWeek: string
   heardAboutUs: string
   message?: string
-  smsOptIn: boolean
+  marketingSmsConsent: boolean
+  transactionalSmsConsent: boolean
   source: 'microsite-enroll'
   campaign: 'summer-2025-urgency'
 }
