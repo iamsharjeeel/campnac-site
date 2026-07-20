@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
+import UrgencyBanner from '@/components/home/UrgencyBanner'
 
 const OPERATOR = 'Newtown Racquetball INC DBA CampNac'
 const BRAND = 'CampNac'
@@ -28,9 +29,10 @@ export default function PrivacyPage() {
         <meta name="description" content="Camp NAC privacy policy — how we collect, use, and protect your information." />
       </Head>
 
+      <UrgencyBanner />
       <Navbar forceSolid />
 
-      <main className="section-py" style={{ background: 'var(--color-white)' }}>
+      <main className="section-py" style={{ background: 'var(--color-white)', paddingTop: '156px' }}>
         <div style={{ maxWidth: '720px', margin: '0 auto', padding: '0 24px' }}>
           <h1 className="font-display" style={{ fontSize: '36px', color: 'var(--color-bark)', marginBottom: '8px' }}>
             Privacy Policy

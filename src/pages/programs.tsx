@@ -120,7 +120,7 @@ export default function ProgramsPage() {
   return (
     <>
       <Head>
-        <title>Summer Camp Programs 2025 — Camp NAC | Horsham, PA</title>
+        <title>Summer Camp Programs 2026 — Camp NAC | Horsham, PA</title>
         <meta
           name="description"
           content="Explore 75+ themed summer camp programs at Camp NAC for kids ages 3–15. Arts, STEM, cooking, sports, outdoor adventure, teen camps, and early learners. Horsham, Bucks County, PA."
@@ -134,7 +134,6 @@ export default function ProgramsPage() {
       <Navbar />
 
       <main>
-        {/* Page Hero — see spec above */}
         <section
           style={{
             minHeight: '50vh',
@@ -142,14 +141,51 @@ export default function ProgramsPage() {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
+            paddingTop: '140px',
+            paddingBottom: '64px',
+            textAlign: 'center',
           }}
         >
-          {/* Build PageHero component or inline — executor's choice */}
-          {/* Content: section label + H1 + subheadline per spec above */}
+          <div className="container-site" style={{ maxWidth: '720px' }}>
+            <span
+              className="font-mono"
+              style={{
+                color: 'var(--color-leaf)',
+                fontSize: '12px',
+                letterSpacing: '0.15em',
+                textTransform: 'uppercase',
+                display: 'block',
+                marginBottom: '20px',
+              }}
+            >
+              Summer 2026
+            </span>
+            <h1
+              className="font-display"
+              style={{
+                color: 'white',
+                fontWeight: 800,
+                fontSize: 'clamp(36px, 5vw, 52px)',
+                lineHeight: 1.08,
+                marginBottom: '20px',
+              }}
+            >
+              75+ Ways to Build<br />The Perfect Summer
+            </h1>
+            <p
+              style={{
+                color: 'rgba(255,255,255,0.7)',
+                fontSize: '17px',
+                lineHeight: 1.65,
+                maxWidth: '580px',
+                margin: '0 auto',
+              }}
+            >
+              From robotics to cooking to outdoor adventure — there&apos;s a Camp NAC program for
+              every kid. Mix and match weeks to custom-build your summer.
+            </p>
+          </div>
         </section>
-
-        {/* Programs Intro */}
-        {/* Build ProgramsIntro component or inline */}
 
         {/* Programs Grid */}
         <section className="section-py" style={{ background: 'var(--color-sky)' }}>
@@ -171,12 +207,6 @@ export default function ProgramsPage() {
             </div>
           </div>
         </section>
-
-        {/* Flexibility Callout */}
-        {/* Build or inline — see spec above */}
-
-        {/* Inline Enroll CTA */}
-        {/* Build or inline — see spec above */}
       </main>
 
       <Footer />
