@@ -38,7 +38,7 @@
  *
  * Bottom bar (flex, space-between, flex-wrap):
  *   Left: "© 2025 Camp NAC. All rights reserved."
- *   Right: "Privacy Policy" → /privacy | "Terms of Service" → /terms
+ *   Right: "Privacy Policy" → /privacy | "Terms of Service" → /terms | "SMS Terms" → /sms-terms
  *   Both: Inter 400, 13px, White/50%
  *   Links: White/70% on hover
  *
@@ -163,10 +163,10 @@ export default function Footer() {
                 📍 132 Pleasant Run, Horsham, PA 19044
               </span>
               <a
-                href="tel:+1XXXXXXXXXX"
+                href="tel:+12159680600"
                 style={{ fontSize: '14px', color: 'rgba(255,255,255,0.7)', textDecoration: 'none' }}
               >
-                📞 [Update phone with client]
+                📞 (215) 968-0600
               </a>
               <a
                 href="https://campnac.com"
@@ -196,7 +196,7 @@ export default function Footer() {
           <span style={{ fontSize: '13px', color: 'rgba(255,255,255,0.5)' }}>
             © 2025 Camp NAC. All rights reserved.
           </span>
-          <div style={{ display: 'flex', gap: '20px' }}>
+          <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap' }}>
             <Link
               href="/privacy"
               style={{ fontSize: '13px', color: 'rgba(255,255,255,0.5)', textDecoration: 'none' }}
@@ -208,6 +208,12 @@ export default function Footer() {
               style={{ fontSize: '13px', color: 'rgba(255,255,255,0.5)', textDecoration: 'none' }}
             >
               Terms of Service
+            </Link>
+            <Link
+              href="/sms-terms"
+              style={{ fontSize: '13px', color: 'rgba(255,255,255,0.5)', textDecoration: 'none' }}
+            >
+              SMS Terms
             </Link>
           </div>
         </div>
