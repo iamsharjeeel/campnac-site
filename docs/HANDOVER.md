@@ -4,7 +4,7 @@
 **Lead Dev:** Sharjeel  
 **Client:** Camp NAC  
 **Last Updated:** 2026-07-30  
-**Current Version:** 0.1.1  
+**Current Version:** 0.1.2  
 **Last Deploy:** Not yet deployed  
 **Live URL:** TBD (target: enroll.campnac.com)
 
@@ -96,6 +96,13 @@ Format:
 ---
 
 ## Session Log
+
+### 2026-07-30 — Fix Vercel build (missing home sections)
+- Built: HowItWorks, CampGrid, SocialProof, FinalCTA; postcss.config.js
+- Changed: Unblocked `pnpm build` / Vercel deploy (missing module imports on home)
+- Version: 0.1.2
+- Deployed: pending Vercel on PR
+- Next task: confirm Vercel deploy green
 
 ### 2026-07-30 — Banner days, official logo, footer DBA
 - Built: Official Camp NAC knock-out logo in `public/campnac-logo.png`

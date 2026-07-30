@@ -4,3 +4,4 @@
 - Extended enrollment banner countdown by 10 days (close date → 2026-08-10)
 - Replaced navbar/footer text logos with official Camp NAC knock-out logo
 - Added footer legal line: Newtown Racquetball inc DBA Camp NAC
+- Fixed Vercel build: added missing HowItWorks, CampGrid, SocialProof, FinalCTA + postcss.config.js
