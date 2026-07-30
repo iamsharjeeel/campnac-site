@@ -47,6 +47,7 @@
  */
 
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function Footer() {
   return (
@@ -63,18 +64,13 @@ export default function Footer() {
         >
           {/* Col 1 — Brand */}
           <div>
-            <div
-              className="font-display"
-              style={{ fontSize: '22px', fontWeight: 700, color: 'white', marginBottom: '4px' }}
-            >
-              Camp NAC
-            </div>
-            <div
-              className="font-mono"
-              style={{ fontSize: '11px', color: 'var(--color-leaf)', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '12px' }}
-            >
-              Horsham, PA
-            </div>
+            <Image
+              src="/campnac-logo.png"
+              alt="Camp NAC"
+              width={180}
+              height={134}
+              style={{ height: '56px', width: 'auto', marginBottom: '12px' }}
+            />
             <p
               style={{ fontSize: '14px', color: 'rgba(255,255,255,0.6)', lineHeight: 1.6, marginBottom: '20px', maxWidth: '240px' }}
             >
@@ -193,9 +189,14 @@ export default function Footer() {
             gap: '12px',
           }}
         >
-          <span style={{ fontSize: '13px', color: 'rgba(255,255,255,0.5)' }}>
-            © 2025 Camp NAC. All rights reserved.
-          </span>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+            <span style={{ fontSize: '13px', color: 'rgba(255,255,255,0.5)' }}>
+              © 2025 Camp NAC. All rights reserved.
+            </span>
+            <span style={{ fontSize: '12px', color: 'rgba(255,255,255,0.4)' }}>
+              Newtown Racquetball inc DBA Camp NAC
+            </span>
+          </div>
           <div style={{ display: 'flex', gap: '20px' }}>
             <Link
               href="/privacy"

@@ -161,6 +161,13 @@ Use these in the form dropdown:
 
 ---
 
+## Recent context (2026-07-30)
+
+- Banner close date extended +10 days → `NEXT_PUBLIC_ENROLLMENT_CLOSE_DATE=2026-08-10` (shows ~11 days left)
+- Official logo: `public/campnac-logo.png` used in Navbar + Footer
+- Footer legal: "Newtown Racquetball inc DBA Camp NAC"
+- If Vercel has an older close-date env var, update it to `2026-08-10` or the banner will stay wrong
+
 ## What's Left
 
 Read `docs/HANDOVER.md` for the current status checklist. Start with whatever is ⬜ and work top-to-bottom. After each item, update the status and session log in HANDOVER.md, then push to main.

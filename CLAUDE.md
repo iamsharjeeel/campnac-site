@@ -83,7 +83,7 @@ Create `.env.local` (never commit this file):
 ```
 NEXT_PUBLIC_GHL_WEBHOOK_URL=https://services.leadconnectorhq.com/hooks/XXXX
 NEXT_PUBLIC_SITE_URL=https://enroll.campnac.com
-NEXT_PUBLIC_ENROLLMENT_CLOSE_DATE=2025-07-31
+NEXT_PUBLIC_ENROLLMENT_CLOSE_DATE=2026-08-10
 ```
 
 ---

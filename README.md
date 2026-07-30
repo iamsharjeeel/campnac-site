@@ -50,6 +50,7 @@ git push origin main
 ```env
 NEXT_PUBLIC_GHL_WEBHOOK_URL=https://services.leadconnectorhq.com/hooks/YOUR_WEBHOOK_ID
 NEXT_PUBLIC_SITE_URL=https://enroll.campnac.com
+NEXT_PUBLIC_ENROLLMENT_CLOSE_DATE=2026-08-10
 ```
 
 Set these in Vercel dashboard → Settings → Environment Variables.
