@@ -130,17 +130,23 @@ export const CAMP_PROGRAMS: CampProgram[] = [
 // For home page — show first 6 programs
 export const HOME_PREVIEW_PROGRAMS = CAMP_PROGRAMS.slice(0, 6)
 
-// Preferred start weeks for form dropdown
-export const START_WEEKS = [
-  'Week 1 — June 23 to June 27',
-  'Week 2 — June 30 to July 4',
-  'Week 3 — July 7 to July 11',
-  'Week 4 — July 14 to July 18',
-  'Week 5 — July 21 to July 25',
-  'Week 6 — July 28 to August 1',
-  'Week 7 — August 4 to August 8',
-  'Week 8 — August 11 to August 15',
-  'Week 9 — August 18 to August 22',
+// Preferred start weeks for form dropdown — Summer 2026 (Mon–Fri sessions).
+// `start` is the week's Monday; the enroll form hides weeks already ended.
+export interface StartWeek {
+  label: string
+  start: string // ISO date of the week's Monday
+}
+
+export const START_WEEKS: StartWeek[] = [
+  { label: 'Week 1 — June 22 to June 26', start: '2026-06-22' },
+  { label: 'Week 2 — June 29 to July 3', start: '2026-06-29' },
+  { label: 'Week 3 — July 6 to July 10', start: '2026-07-06' },
+  { label: 'Week 4 — July 13 to July 17', start: '2026-07-13' },
+  { label: 'Week 5 — July 20 to July 24', start: '2026-07-20' },
+  { label: 'Week 6 — July 27 to July 31', start: '2026-07-27' },
+  { label: 'Week 7 — August 3 to August 7', start: '2026-08-03' },
+  { label: 'Week 8 — August 10 to August 14', start: '2026-08-10' },
+  { label: 'Week 9 — August 17 to August 21', start: '2026-08-17' },
 ]
 
 // Heard about us options for form dropdown

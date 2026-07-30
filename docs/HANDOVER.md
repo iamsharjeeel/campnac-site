@@ -4,7 +4,7 @@
 **Lead Dev:** Sharjeel  
 **Client:** Camp NAC  
 **Last Updated:** 2026-07-30  
-**Current Version:** 0.1.1  
+**Current Version:** 0.1.3  
 **Last Deploy:** Not yet deployed  
 **Live URL:** TBD (target: enroll.campnac.com)
 
@@ -96,6 +96,21 @@ Format:
 ---
 
 ## Session Log
+
+### 2026-07-30 — Fix glitched pages (hero/programs/enroll)
+- Built: Restored working page implementations + GSAP fromTo hero fix
+- Changed: Home hero text visible again; programs hero + sections filled; enroll form/hero restored; footer phone + SMS Terms; banner Summer 2026
+- Kept: official logo, +10 days close date (2026-08-10), DBA footer line
+- Version: 0.1.3
+- Deployed: pending PR merge
+- Next task: merge and confirm production
+
+### 2026-07-30 — Fix Vercel build (missing home sections)
+- Built: HowItWorks, CampGrid, SocialProof, FinalCTA; postcss.config.js
+- Changed: Unblocked `pnpm build` / Vercel deploy (missing module imports on home)
+- Version: 0.1.2
+- Deployed: Vercel preview green on PR #3; merge to fix production
+- Next task: merge PR #3 so production deploys
 
 ### 2026-07-30 — Banner days, official logo, footer DBA
 - Built: Official Camp NAC knock-out logo in `public/campnac-logo.png`

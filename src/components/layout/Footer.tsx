@@ -76,24 +76,6 @@ export default function Footer() {
             >
               Bucks County's Most-Loved Summer Camp for kids ages 3–15.
             </p>
-            <div style={{ display: 'flex', gap: '16px' }}>
-              <a
-                href="https://facebook.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ fontSize: '13px', color: 'rgba(255,255,255,0.6)', textDecoration: 'none' }}
-              >
-                Facebook
-              </a>
-              <a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ fontSize: '13px', color: 'rgba(255,255,255,0.6)', textDecoration: 'none' }}
-              >
-                Instagram
-              </a>
-            </div>
           </div>
 
           {/* Col 2 — Quick Links */}
@@ -115,27 +97,14 @@ export default function Footer() {
                 { label: 'Home', href: '/' },
                 { label: 'Programs', href: '/programs' },
                 { label: 'Enroll Now', href: '/enroll' },
-                { label: 'campnac.com ↗', href: 'https://campnac.com', external: true },
               ].map((link) => (
-                link.external ? (
-                  <a
-                    key={link.href}
-                    href={link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{ fontSize: '14px', color: 'rgba(255,255,255,0.7)', textDecoration: 'none' }}
-                  >
-                    {link.label}
-                  </a>
-                ) : (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    style={{ fontSize: '14px', color: 'rgba(255,255,255,0.7)', textDecoration: 'none' }}
-                  >
-                    {link.label}
-                  </Link>
-                )
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  style={{ fontSize: '14px', color: 'rgba(255,255,255,0.7)', textDecoration: 'none' }}
+                >
+                  {link.label}
+                </Link>
               ))}
             </nav>
           </div>
@@ -159,18 +128,10 @@ export default function Footer() {
                 📍 132 Pleasant Run, Horsham, PA 19044
               </span>
               <a
-                href="tel:+1XXXXXXXXXX"
+                href="tel:+12159680600"
                 style={{ fontSize: '14px', color: 'rgba(255,255,255,0.7)', textDecoration: 'none' }}
               >
-                📞 [Update phone with client]
-              </a>
-              <a
-                href="https://campnac.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ fontSize: '14px', color: 'rgba(255,255,255,0.7)', textDecoration: 'none' }}
-              >
-                🌐 campnac.com
+                📞 (215) 968-0600
               </a>
             </div>
           </div>
@@ -197,7 +158,7 @@ export default function Footer() {
               Newtown Racquetball inc DBA Camp NAC
             </span>
           </div>
-          <div style={{ display: 'flex', gap: '20px' }}>
+          <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap' }}>
             <Link
               href="/privacy"
               style={{ fontSize: '13px', color: 'rgba(255,255,255,0.5)', textDecoration: 'none' }}
@@ -209,6 +170,12 @@ export default function Footer() {
               style={{ fontSize: '13px', color: 'rgba(255,255,255,0.5)', textDecoration: 'none' }}
             >
               Terms of Service
+            </Link>
+            <Link
+              href="/sms-terms"
+              style={{ fontSize: '13px', color: 'rgba(255,255,255,0.5)', textDecoration: 'none' }}
+            >
+              SMS Terms
             </Link>
           </div>
         </div>
