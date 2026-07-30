@@ -115,27 +115,14 @@ export default function Footer() {
                 { label: 'Home', href: '/' },
                 { label: 'Programs', href: '/programs' },
                 { label: 'Enroll Now', href: '/enroll' },
-                { label: 'campnac.com ↗', href: 'https://campnac.com', external: true },
               ].map((link) => (
-                link.external ? (
-                  <a
-                    key={link.href}
-                    href={link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{ fontSize: '14px', color: 'rgba(255,255,255,0.7)', textDecoration: 'none' }}
-                  >
-                    {link.label}
-                  </a>
-                ) : (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    style={{ fontSize: '14px', color: 'rgba(255,255,255,0.7)', textDecoration: 'none' }}
-                  >
-                    {link.label}
-                  </Link>
-                )
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  style={{ fontSize: '14px', color: 'rgba(255,255,255,0.7)', textDecoration: 'none' }}
+                >
+                  {link.label}
+                </Link>
               ))}
             </nav>
           </div>
@@ -163,14 +150,6 @@ export default function Footer() {
                 style={{ fontSize: '14px', color: 'rgba(255,255,255,0.7)', textDecoration: 'none' }}
               >
                 📞 (215) 968-0600
-              </a>
-              <a
-                href="https://campnac.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ fontSize: '14px', color: 'rgba(255,255,255,0.7)', textDecoration: 'none' }}
-              >
-                🌐 campnac.com
               </a>
             </div>
           </div>
