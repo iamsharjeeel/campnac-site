@@ -101,8 +101,8 @@ Format:
 - Built: HowItWorks, CampGrid, SocialProof, FinalCTA; postcss.config.js
 - Changed: Unblocked `pnpm build` / Vercel deploy (missing module imports on home)
 - Version: 0.1.2
-- Deployed: pending Vercel on PR
-- Next task: confirm Vercel deploy green
+- Deployed: Vercel preview green on PR #3; merge to fix production
+- Next task: merge PR #3 so production deploys
 
 ### 2026-07-30 — Banner days, official logo, footer DBA
 - Built: Official Camp NAC knock-out logo in `public/campnac-logo.png`
