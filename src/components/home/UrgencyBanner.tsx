@@ -81,7 +81,7 @@ export default function UrgencyBanner() {
         }}
       >
         <span style={{ color: 'white', fontFamily: 'var(--font-inter)', fontSize: '14px', fontWeight: 500 }}>
-          Summer 2025 enrollment is now closed. Check back in January 2026.
+          Summer 2026 enrollment is now closed. Check back in January 2027.
         </span>
       </div>
     )
@@ -115,7 +115,7 @@ export default function UrgencyBanner() {
           fontWeight: 500,
         }}
       >
-        <span>⚡ Limited spots for Summer 2025 —</span>
+        <span>⚡ Limited spots for Summer 2026 —</span>
         <span
           className={`font-mono ${isUrgent ? 'animate-pulse-slow' : ''}`}
           style={{ fontSize: '18px', fontWeight: 700, fontFamily: 'var(--font-jetbrains-mono)' }}

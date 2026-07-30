@@ -78,7 +78,7 @@ export default function Footer() {
             </p>
             <div style={{ display: 'flex', gap: '16px' }}>
               <a
-                href="https://facebook.com"
+                href="https://facebook.com/CampNAC"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{ fontSize: '13px', color: 'rgba(255,255,255,0.6)', textDecoration: 'none' }}
@@ -86,7 +86,7 @@ export default function Footer() {
                 Facebook
               </a>
               <a
-                href="https://instagram.com"
+                href="https://instagram.com/camp_nac"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{ fontSize: '13px', color: 'rgba(255,255,255,0.6)', textDecoration: 'none' }}
@@ -159,10 +159,10 @@ export default function Footer() {
                 📍 132 Pleasant Run, Horsham, PA 19044
               </span>
               <a
-                href="tel:+1XXXXXXXXXX"
+                href="tel:+12159680600"
                 style={{ fontSize: '14px', color: 'rgba(255,255,255,0.7)', textDecoration: 'none' }}
               >
-                📞 [Update phone with client]
+                📞 (215) 968-0600
               </a>
               <a
                 href="https://campnac.com"
@@ -197,7 +197,7 @@ export default function Footer() {
               Newtown Racquetball inc DBA Camp NAC
             </span>
           </div>
-          <div style={{ display: 'flex', gap: '20px' }}>
+          <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap' }}>
             <Link
               href="/privacy"
               style={{ fontSize: '13px', color: 'rgba(255,255,255,0.5)', textDecoration: 'none' }}
@@ -209,6 +209,12 @@ export default function Footer() {
               style={{ fontSize: '13px', color: 'rgba(255,255,255,0.5)', textDecoration: 'none' }}
             >
               Terms of Service
+            </Link>
+            <Link
+              href="/sms-terms"
+              style={{ fontSize: '13px', color: 'rgba(255,255,255,0.5)', textDecoration: 'none' }}
+            >
+              SMS Terms
             </Link>
           </div>
         </div>
