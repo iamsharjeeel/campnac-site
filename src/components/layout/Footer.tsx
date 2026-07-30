@@ -76,24 +76,6 @@ export default function Footer() {
             >
               Bucks County's Most-Loved Summer Camp for kids ages 3–15.
             </p>
-            <div style={{ display: 'flex', gap: '16px' }}>
-              <a
-                href="https://facebook.com/CampNAC"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ fontSize: '13px', color: 'rgba(255,255,255,0.6)', textDecoration: 'none' }}
-              >
-                Facebook
-              </a>
-              <a
-                href="https://instagram.com/camp_nac"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ fontSize: '13px', color: 'rgba(255,255,255,0.6)', textDecoration: 'none' }}
-              >
-                Instagram
-              </a>
-            </div>
           </div>
 
           {/* Col 2 — Quick Links */}
