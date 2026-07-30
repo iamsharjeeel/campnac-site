@@ -22,7 +22,7 @@
  * ─── COUNTDOWN LOGIC ─────────────────────────────────────────────────────────
  *
  * Close date from: process.env.NEXT_PUBLIC_ENROLLMENT_CLOSE_DATE (format: YYYY-MM-DD)
- * Fallback: July 31, 2025
+ * Fallback: August 10, 2026
  *
  * Calculate days remaining on mount and update every hour (setInterval).
  * Use Math.ceil for partial days (if 1.5 days remain, show "2 days").
@@ -37,7 +37,7 @@ import { useState, useEffect } from 'react'
 function getDaysRemaining(closeDateStr?: string): number {
   const closeDate = closeDateStr
     ? new Date(closeDateStr)
-    : new Date('2025-07-31')
+    : new Date('2026-08-10')
 
   const now = new Date()
   const diffMs = closeDate.getTime() - now.getTime()

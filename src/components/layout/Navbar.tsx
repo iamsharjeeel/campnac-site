@@ -70,6 +70,7 @@
 
 import { useRef, useState, useLayoutEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { useRouter } from 'next/router'
 import { motion, AnimatePresence } from 'framer-motion'
 import { animateNavbar, initNavbarScroll } from '@/lib/animations'
@@ -134,26 +135,15 @@ export default function Navbar({ forceSolid = false }: NavbarProps) {
           }}
         >
           {/* Logo */}
-          <Link href="/" style={{ textDecoration: 'none' }}>
-            <div>
-              <div
-                className="font-display"
-                style={{ color: 'white', fontSize: '22px', fontWeight: 700, lineHeight: 1 }}
-              >
-                Camp NAC
-              </div>
-              <div
-                className="font-mono"
-                style={{
-                  color: 'var(--color-leaf)',
-                  fontSize: '11px',
-                  letterSpacing: '0.1em',
-                  textTransform: 'uppercase',
-                }}
-              >
-                Horsham, PA
-              </div>
-            </div>
+          <Link href="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
+            <Image
+              src="/campnac-logo.png"
+              alt="Camp NAC"
+              width={160}
+              height={119}
+              priority
+              style={{ height: '44px', width: 'auto' }}
+            />
           </Link>
 
           {/* Desktop Nav Links */}

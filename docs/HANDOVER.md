@@ -3,8 +3,8 @@
 **Agency:** Xovera (xovera.io)  
 **Lead Dev:** Sharjeel  
 **Client:** Camp NAC  
-**Last Updated:** [UPDATE ON EVERY SESSION]  
-**Current Version:** 0.1.0  
+**Last Updated:** 2026-07-30  
+**Current Version:** 0.1.1  
 **Last Deploy:** Not yet deployed  
 **Live URL:** TBD (target: enroll.campnac.com)
 
@@ -42,7 +42,7 @@
 ```
 NEXT_PUBLIC_GHL_WEBHOOK_URL=  ← get from GHL subaccount webhook settings
 NEXT_PUBLIC_SITE_URL=https://enroll.campnac.com
-NEXT_PUBLIC_ENROLLMENT_CLOSE_DATE=2025-07-31  ← for countdown timer
+NEXT_PUBLIC_ENROLLMENT_CLOSE_DATE=2026-08-10  ← for countdown timer
 ```
 
 ---
@@ -97,4 +97,13 @@ Format:
 
 ## Session Log
 
-*(No sessions yet — populate as work begins)*
+### 2026-07-30 — Banner days, official logo, footer DBA
+- Built: Official Camp NAC knock-out logo in `public/campnac-logo.png`
+- Changed: UrgencyBanner close date +10 days → 2026-08-10; Navbar + Footer text logos → official PNG; footer legal line "Newtown Racquetball inc DBA Camp NAC"
+- Version: 0.1.1
+- Deployed: pending PR merge
+- Next task: confirm Vercel `NEXT_PUBLIC_ENROLLMENT_CLOSE_DATE=2026-08-10` if set in dashboard
+
+### Gaps updated
+- [x] High-res logo file (PNG knock-out from campnac.com)
+- [x] Legal DBA name in footer
